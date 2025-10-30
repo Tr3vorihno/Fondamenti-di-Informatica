@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ConvertiRighe{
+public class Es13_II_Sett{
 	public static void main(String[] args){
 		Scanner in = new Scanner(System.in);
 

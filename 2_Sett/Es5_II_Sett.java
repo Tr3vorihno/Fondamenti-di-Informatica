@@ -17,7 +17,7 @@ il corretto funzionamento del programma in casi diversi (in particolare, con num
 
 	
 */
-public class Rap_Numeri{
+public class Es5_II_Sett{
 	public static void main(String[] args){
 		Scanner input = new Scanner(System.in);
 

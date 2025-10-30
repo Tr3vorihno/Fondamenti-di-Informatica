@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ConvertiSecToHours{
+public class Es10_II_Sett{
 	public static void main(String args[]){
 		Scanner in = new Scanner(System.in);
 		System.out.println("Inserisci il numero di secondi da covertire in ore: ");

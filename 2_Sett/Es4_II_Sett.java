@@ -4,7 +4,7 @@ import java.util.Scanner;
 	 Che cosa succede se il divisore è zero?
 	 Se il divisore è zero, viene lanciata una eccezzione del tipo arithmetic exception
 */
-public class IntegerDivider{
+public class Es4_II_Sett{
 	public static void main(String[] args){
 		Scanner input = new Scanner(System.in);
 		System.out.println("Inserire primo numero da dividere: \n");

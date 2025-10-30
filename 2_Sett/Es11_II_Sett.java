@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ComputeMoney{
+public class Es11_II_Sett{
 	public static void main(String args[]){
 		// inserire solo numeri interi: 
 		Scanner in = new Scanner(System.in);

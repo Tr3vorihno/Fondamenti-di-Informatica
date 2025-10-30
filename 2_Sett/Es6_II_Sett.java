@@ -5,7 +5,7 @@ e ne stampi a standard output la codifica binaria in formato a virgola fissa, us
 cifre binarie per la parte intera e cinque per quella frazionaria. Esempio: 8.5 in base dieci = 01000.10000 in base due.
 Suggerimento: si usino gli algoritmi di conversione da decimale a binario della parte intera e della parte frazionaria presentati a lezione.
 */
-public class Conversione_bin{
+public class Es6_II_Sett{
 	public static void main(String args[]){
 		Scanner in = new Scanner(System.in);
 		// inserimento numero appartenente a Z : 0<x<32

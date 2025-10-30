@@ -1,6 +1,6 @@
 import java.awt.Rectangle;
 
-public class ProvaRectangle{
+public class Es8_9_II_Sett{
 	public static void main(String args[]){
 		// es 8 lab
 		Rectangle ret = new Rectangle(0,0,5,5);

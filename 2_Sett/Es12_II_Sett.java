@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class ConvertiGioToSett{
+public class Es12_II_Sett{
 	public static void main(String args[]){
 		Scanner in = new Scanner(System.in);
 		System.out.println("Inserire i giorni da convertine in settimane e giorni");

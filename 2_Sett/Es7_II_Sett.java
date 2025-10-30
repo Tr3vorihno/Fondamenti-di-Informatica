@@ -15,7 +15,7 @@ Modificare poi il programma in modo che funzioni correttamente anche se il secon
   Tempo trascorso: 15 ore e 30 minuti
 */
 import java.util.Scanner;
-public class Orari_formato_24_ore{
+public class Es7_II_Sett{
    public static void main(String args[]){
       final int MIN_IN_A_DAY = 1440; // minuti presenti in un giorno
       Scanner in = new Scanner(System.in);

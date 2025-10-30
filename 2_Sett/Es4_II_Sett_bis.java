@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class DoubleDivider{
+public class Es4_II_Sett_bis{
 	public static void main(String[] args){
 		Scanner input = new Scanner(System.in);
 
