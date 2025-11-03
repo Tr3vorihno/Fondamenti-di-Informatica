@@ -1,0 +1,51 @@
+public class BankAccount{
+    private static NUMERO_CONTO = 0;
+
+    private double amount;
+    private int num_conto;
+
+    public BankAccount(double amount){// costruttore con cifra
+        NUMERO_CONTO++;
+        if(amount<0){
+            this.amount=0;
+        }else{
+            this.amount = amout;
+        }
+        this.num_conto = NUMERO_CONTO;
+    }
+    public BankAccount(){// costruttore di def
+        NUMERO_CONTO++;
+        this.amount = 0;
+        this.num_conto = NUMERO_CONTO;
+    }
+
+    public double getAmount(){// getters ; non creo setters siccome non posso impostare un saldo a piacere in un conto bancario
+        return this.amount;
+    }
+    public double getNumConto(){
+        return this.num_conto;
+    }
+    public void deposit(double amount){
+        if(amount>=0){
+            this.amount+=amount;
+        }
+    }
+    public void withdraw(double amount){
+        if(amount>=0 && this.getAmount()-amount>=0){
+            this.amount-=amount;
+        }
+    }
+    public void transfer(double amount, BankAccount other){
+        this.amount -= amount;
+        other.deposit(amount);this.amount-=amount;
+    }
+    public addInterest(double rate){
+        int money=0;
+        if(rate<0){// nel caso rate sia negativo, non aggiungo interessi perchè sarebbe un errore
+            rate = 0;
+        }else{
+            money = ((this.amount *rate)/100);
+            this.deposit(money);
+        }
+    }
+}
