@@ -1,5 +1,5 @@
 public class BankAccount{
-    private static NUMERO_CONTO = 0;
+    private static int NUMERO_CONTO = 0;
 
     private double amount;
     private int num_conto;
@@ -9,7 +9,7 @@ public class BankAccount{
         if(amount<0){
             this.amount=0;
         }else{
-            this.amount = amout;
+            this.amount = amount;
         }
         this.num_conto = NUMERO_CONTO;
     }
@@ -22,7 +22,7 @@ public class BankAccount{
     public double getAmount(){// getters ; non creo setters siccome non posso impostare un saldo a piacere in un conto bancario
         return this.amount;
     }
-    public double getNumConto(){
+    public int getNumConto(){
         return this.num_conto;
     }
     public void deposit(double amount){
@@ -39,8 +39,8 @@ public class BankAccount{
         this.amount -= amount;
         other.deposit(amount);this.amount-=amount;
     }
-    public addInterest(double rate){
-        int money=0;
+    public void addInterest(double rate){
+        double money=0;
         if(rate<0){// nel caso rate sia negativo, non aggiungo interessi perchè sarebbe un errore
             rate = 0;
         }else{
