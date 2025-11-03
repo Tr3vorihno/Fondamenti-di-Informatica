@@ -20,6 +20,7 @@ public class Es9_III_Sett{
 				}	
 			}
 			
+			
 		}
 		String n1 = frase.substring(k,frase.length());
 		n3 += n1;
