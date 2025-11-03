@@ -8,7 +8,7 @@ public class Es4_IV_Sett{
         System.out.println("Inserire le 3 lunghezze del triangolo: ");
         int a = Integer.parseInt(in.next()),b = Integer.parseInt(in.next()),c = Integer.parseInt(in.next());
         double cos_a=0, cos_b=0, cos_c=0,ang_a=0,ang_b=0,ang_c=0,max_ang=0;
-        if(a<(b+c) && b<(a+c) && c<(b+a)){
+        if(a<(b+c) && b<(a+c) && c<(b+a)){// controllo se e' un triangolo
             if(a==b && b==c){
                 System.out.print("Triangolo equilatero ");
             }else{
@@ -25,7 +25,7 @@ public class Es4_IV_Sett{
                 }else{
                     System.out.print("Triangolo scaleno");
                 }
-
+                // determino quale è l'angolo più grande e capisco in base a quello se è ottusangolo acutangolo o rettangolo
                 if(ang_a > ang_b && ang_a > ang_c){
                     max_ang = ang_a;
                 }else{
