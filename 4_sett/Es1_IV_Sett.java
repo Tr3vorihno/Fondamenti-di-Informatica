@@ -13,6 +13,8 @@ public class Es1_IV_Sett{
 
         System.out.println("Ordine lessicografico: ");
 
+
+        // confronto le varie stringhe con degli if annidati, per capire il loro ordine
         if(n1.compareTo(n2)<0 && n1.compareTo(n3)<0){
             System.out.println(n1);
             if(n2.compareTo(n3)<0 ){
