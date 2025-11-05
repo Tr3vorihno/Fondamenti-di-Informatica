@@ -40,6 +40,6 @@ public class Es7_II_Sett{
       ore3 %= MIN_IN_A_DAY; // per evitare "overflow" quindi avere distanze tra ore di piu' di 24 ore
       int oreFinal = ore3/60; // riconverto i minuti in ore
       int minutiFinal = ore3%60;
-      System.out.println("I due orari distano : "+oreFinal+":"+minutiFinal+" ore");
+      System.out.println("I due orari distano : "+oreFinal+" ore , "+minutiFinal+" minuti");
    }
 }
