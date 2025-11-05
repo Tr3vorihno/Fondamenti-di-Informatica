@@ -31,6 +31,7 @@ public class Es10_IV_Sett{
         String piane = in.nextLine();
         Pianeti n = Pianeti.valueOf(piane);
         System.out.println("Nel pianeta : "+piane+" pesi: "+n.getPeso(peso)+" kg");
+        sborra
 
     }
 }
