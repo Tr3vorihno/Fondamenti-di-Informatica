@@ -1,4 +1,19 @@
+// inserisco commenti javadoc, per soddisfare anche la cosegna "b"
+/**
+ * @author Enrico Cervi
+ * @version 1.0
+ * codice che dato un numero n in binario, ne calcola la cifratura secondo un semplice algoritmo di crittografia
+ * e successivamente lo decifra
+ */
 import java.util.Scanner;
+
+/**
+ * @param in oggetto per leggere da tastiera 
+ * @param num1 num binario preso da tastiera
+ * @param chiave chiave di cifratura
+ * @param bin_da_stampare variabile per stampare una stringa
+ * 
+ */
 
 public class CifraturaBin{
     public static void main(String[] args){
@@ -25,13 +40,22 @@ public class CifraturaBin{
 
     }
     
+    /**
+     * @param num numero preso da input
+     * @param chiave chiave di cifratura
+     * @return numero cifrato
+     */
     public static int cifrare(int num, int chiave){
         num *= 2;
         num += chiave;
         num ^= chiave; 
         return num;
     }
-
+/**
+     * @param num numero da decifrare
+     * @param chiave chiave di decifratura
+     * @return numero decifrato
+     */
     public static int decifrare(int num, int chiave){
         num ^= chiave; 
         num -= chiave;
