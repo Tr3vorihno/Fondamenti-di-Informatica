@@ -62,4 +62,5 @@ public class CifraturaBin{
         num /= 2;
         return num;
     }
+    int prova = 0;
 }
