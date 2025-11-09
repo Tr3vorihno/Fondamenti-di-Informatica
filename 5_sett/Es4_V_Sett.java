@@ -16,7 +16,6 @@ public class Es4_V_Sett{
         boolean controllo = true;
         for(int i=0; i<s.length()/2; i++){
             if(s.charAt(i) != s.charAt(s.length()-i-1)) controllo = false;
-            //System.out.println(s.charAt(i)+" "+s.charAt(s.length()-i));
         }
         return controllo;
     }
