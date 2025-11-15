@@ -1,4 +1,5 @@
 public class ArrayAlgs{
+    /*
     public static void main(String args[]){
         int n[] = randomIntArray(5,5,11);
         System.out.println(printArray(n,5));
@@ -10,6 +11,7 @@ public class ArrayAlgs{
         System.out.println(printArray(n,5));
         System.out.println(findMin(n,5));
     }
+    */
     // arraycopy(Object src, int srcPos, Object dest, int destPos, int length) 
     public static int[] resize(int[] oldArray, int newLength)throws Exception{
         if(newLength < 0 || oldArray == null || newLength < oldArray.length) throw new Exception();
