@@ -1,15 +1,10 @@
 public class ArrayAlgs{
     /*
     public static void main(String args[]){
-        int n[] = randomIntArray(5,5,11);
-        System.out.println(printArray(n,5));
-        //n = resize(n,5);
-        //System.out.println(printArray(n,5));
-        removeSorted(n,5,2);
-        System.out.println(printArray(n,4));
-        insert(n,4,3,67);
-        System.out.println(printArray(n,5));
-        System.out.println(findMin(n,5));
+        int n[] = randomIntArray(100,0,1000);
+        System.out.println(printArray(n,100));
+        selectionSort(n,100);
+        System.out.println(printArray(n,100)); 
     }
     */
     // arraycopy(Object src, int srcPos, Object dest, int destPos, int length) 
@@ -64,5 +59,40 @@ public class ArrayAlgs{
             if(v[i]<min) min = v[i];
         }
         return min;
+    }
+    public static int findMinPos(int[] v, int ini, int fine){// lavoro con array riempiti a metà e con inizio diverso da 0
+        int min = v[ini];
+        int pos = ini;
+        for(int i = ini ; i < fine ; i++){
+            if(min>v[i]){
+                min = v[i];
+                pos = i;
+            }
+        }
+        return pos;
+    }
+    public static int findMaxPos(int[] v, int ini, int fine){// lavoro con array riempiti a metà e con inizio diverso da 0
+        int max = v[ini];
+        int pos = ini;
+        for(int i = ini ; i < fine ; i++){
+            if(max<v[i]){
+                max = v[i];
+                pos = i;
+            }
+        }
+        return pos;
+    }
+    public static void swap(int[] v, int posA, int posB){
+        if(posA!=posB){
+            int temp = v[posA];
+            v[posA] = v[posB];
+            v[posB] = temp;
+        }
+    }
+    public static void selectionSort(int[] v, int length){
+        for(int i = 0; i<length; i++){
+            int min = findMinPos(v,i,length);
+            swap(v,min,i);
+        }
     }
 }
