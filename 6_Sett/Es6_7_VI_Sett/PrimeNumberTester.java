@@ -3,10 +3,16 @@ import java.util.Scanner;
 public class PrimeNumberTester{
     public static void main(String args[]){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Inserisci numero da fattorizzare :");
+        System.out.println("Inserisci numero (isPrimo):");
         int num = scanner.nextInt();
-        FactorGenerator f = new FactorGenerator(num);
-
-        
+        if(num == 1){
+            System.out.println("Numero primo");
+        }else{
+            FactorGenerator f = new FactorGenerator(num);
+            if(f.nextFactor()==num) System.out.println("Numero primo");
+            else{
+                System.out.println("Numero non primo");
+            }
+        }
     }
 }
