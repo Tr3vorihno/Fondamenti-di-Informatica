@@ -1,12 +1,15 @@
 public class ArrayAlgs{
-    /*
+    
     public static void main(String args[]){
-        int n[] = randomIntArray(100,0,1000);
-        System.out.println(printArray(n,100));
-        selectionSort(n,100);
-        System.out.println(printArray(n,100)); 
+        int n[] = randomIntArray(100000,0,10000);
+        //int[] n = {5,4,3,2,1};
+        System.out.println(printArray(n,100000));
+        n = mergeSort(n,100000);
+        System.out.println(printArray(n,100000));
+        //selectionSort(n,100);
+        
     }
-    */
+    
     // arraycopy(Object src, int srcPos, Object dest, int destPos, int length) 
     public static int[] resize(int[] oldArray, int newLength)throws Exception{
         if(newLength < 0 || oldArray == null || newLength < oldArray.length) throw new Exception();
@@ -25,7 +28,7 @@ public class ArrayAlgs{
     public static int[] randomIntArray(int length, int min, int max){// numero casuale tra min e max-1 
         int[] array = new int[length]; 
         for(int i=0 ; i<length; i++){
-            array[i] = ((int)(Math.random()*100%(max-min)+min));
+            array[i] = ((int)(Math.random()*(max-min)+min));
         }
         return array;
     }
@@ -94,5 +97,42 @@ public class ArrayAlgs{
             int min = findMinPos(v,i,length);
             swap(v,min,i);
         }
+    }
+    public static int[] merge(int[] a, int[] b){
+        int lA = 0, lB = 0, lC = 0, dim = (a.length+b.length);
+        int[] c = new int[dim];
+        while(a.length > lA && b.length > lB){
+            if(a[lA] < b[lB]){
+                c[lC] = a[lA];
+                lC++;
+                lA++;
+            }else{
+                c[lC] = b[lB];
+                lC++;
+                lB++;
+            }
+        }
+        if(a.length > lA){
+            System.arraycopy(a,lA,c,lC,(dim-lC));
+        }else{
+            if(b.length > lB){
+                System.arraycopy(b,lB,c,lC,(dim-lC));
+            }
+        }
+        return c;
+    }
+    public static int[] mergeSort(int[] a, int n){
+        int n1 = n / 2, n2 = n - n1;
+        //if(n1 <= 0) n1 = 1;
+        //if(n2 <= 0) n2 = 1;
+        int[] a1 = new int[n1], a2 = new int[n2];
+        System.arraycopy(a,0,a1,0,n1);
+        System.arraycopy(a,n1,a2,0,n2);
+
+        if(n2 != 1) a2 = mergeSort(a2,n2);
+        if(n1 != 1) a1 = mergeSort(a1,n1);
+        a = merge(a1,a2);
+        //System.out.println(printArray(a,n)); stringa debug post merge
+        return a;
     }
 }
