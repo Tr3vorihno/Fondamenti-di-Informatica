@@ -1,6 +1,6 @@
 public class ArrayAlgs{
     
-    public static void main(String args[]){
+    /*public static void main(String args[]){
         int n[] = randomIntArray(100000,0,10000);
         //int[] n = {5,4,3,2,1};
         System.out.println(printArray(n,100000));
@@ -9,7 +9,7 @@ public class ArrayAlgs{
         //selectionSort(n,100);
         
     }
-    
+    */
     // arraycopy(Object src, int srcPos, Object dest, int destPos, int length) 
     public static int[] resize(int[] oldArray, int newLength)throws Exception{
         if(newLength < 0 || oldArray == null || newLength < oldArray.length) throw new Exception();
