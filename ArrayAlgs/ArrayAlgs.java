@@ -1,3 +1,6 @@
+package Fondamenti-di-Informatica.ArrayAlgs;
+
+
 public class ArrayAlgs{
     
     /*public static void main(String args[]){
