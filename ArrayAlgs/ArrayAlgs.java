@@ -1,4 +1,4 @@
-package Fondamenti-di-Informatica.ArrayAlgs;
+package ArrayAlgs;
 
 
 public class ArrayAlgs{
@@ -40,6 +40,7 @@ public class ArrayAlgs{
             v[i] = v[i+1];
         }
     }
+   
     public static void insert(int[] v, int length, int index, int value){
         for(int i = length ; i > index ; i--){
             v[i] = v[i-1];
@@ -137,5 +138,12 @@ public class ArrayAlgs{
         a = merge(a1,a2);
         //System.out.println(printArray(a,n)); stringa debug post merge
         return a;
+    }
+    public static boolean isPrime(int n){
+        if(n==0) return false;
+        for(int i=2; i<n; i++){
+            if(n%i==0)  return false; 
+        }
+        return true;
     }
 }
