@@ -1,11 +1,9 @@
 package Sett_7;
-import java.util.Scanner;
+
 public class Es3_VII_Sett{
     public static void main(String[] args){
-        Scanner in = new Scanner(System.in);
-
-        System.out.println("Inserisci due stringhe da confrontare: ");
-        String s1 = in.nextLine(), s2 = in.nextLine();
+        
+        String s1 = args[0], s2 = args[1];
         String fin="";
         int len_max=0;
         if(s1.length()<s2.length()){// imposto s1 come stringa di lunghezza maggiore

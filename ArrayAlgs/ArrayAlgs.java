@@ -139,6 +139,14 @@ public class ArrayAlgs{
         //System.out.println(printArray(a,n)); stringa debug post merge
         return a;
     }
+    public static void insertionSort(int[] v, int length){
+        for(int i=1; i<length; i++){
+            for(int j=i; j>0; j--){
+                if(v[j]<=v[j-1]);
+                swap(v,j,j-1);
+            }
+        }
+    }
     public static boolean isPrime(int n){
         if(n==0) return false;
         for(int i=2; i<n; i++){
