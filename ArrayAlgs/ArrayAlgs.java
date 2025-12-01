@@ -102,6 +102,12 @@ public class ArrayAlgs{
             swap(v,min,i);
         }
     }
+    public static void selectionSortDecre(int[] v, int length){
+        for(int i = 0; i<length; i++){
+            int max = findMaxPos(v,i,length);
+            swap(v,max,i);
+        }
+    }
     public static int[] merge(int[] a, int[] b){
         int lA = 0, lB = 0, lC = 0, dim = (a.length+b.length);
         int[] c = new int[dim];
