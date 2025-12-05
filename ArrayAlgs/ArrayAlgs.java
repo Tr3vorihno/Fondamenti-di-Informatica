@@ -1,11 +1,11 @@
 package ArrayAlgs;
 
 
-public class ArrayAlgs{
+public class ArrayAlgs ext{
     
     /*public static void main(String args[]){
         int n[] = randomIntArray(100000,0,10000);
-        //int[] n = {5,4,3,2,1};
+        //Comparable[] n = {5,4,3,2,1};
         System.out.println(printArray(n,100000));
         n = mergeSort(n,100000);
         System.out.println(printArray(n,100000));
@@ -13,14 +13,26 @@ public class ArrayAlgs{
         
     }
     */
-    // arraycopy(Object src, int srcPos, Object dest, int destPos, int length) 
-    public static int[] resize(int[] oldArray, int newLength)throws Exception{
-        if(newLength < 0 || oldArray == null || newLength < oldArray.length) throw new Exception();
-        int[] newArray = new int[newLength];
+    // arraycopy(Object src, int srcPos, Object dest, int destPos, int length)
+    //------
+
+
+
+
+    //TODO 
+    // CONTROLLA STA FUNZIONE,
+    public static Comparable[] resize(Comparable[] oldArray, int newLength)throws Exception{
+        if(newLength < 0 || oldArray == null || newLength < oldArray.length()) throw new Exception();
+        Comparable[] newArray = new Comparable[newLength];
         System.arraycopy(oldArray,0,newArray,0,3);
         return newArray;
     }
-    public static String printArray(int[] array, int dim){
+
+
+
+
+    //---------
+    public static String printArray(Comparable[] array, int dim){
         String n = "[ ";
         for(int i=0; i<dim; i++){
             n += array[i]+" ";
@@ -28,6 +40,12 @@ public class ArrayAlgs{
         n += "]";
         return n;
     }
+
+    //----------------
+    //TODO
+    //riempimento generico
+
+
     public static int[] randomIntArray(int length, int min, int max){// numero casuale tra min e max-1 
         int[] array = new int[length]; 
         for(int i=0 ; i<length; i++){
@@ -35,84 +53,89 @@ public class ArrayAlgs{
         }
         return array;
     }
-    public static void removeSorted(int[] v, int length, int index){// si utilizzano array riempiti a meta', ricordarsi di decrementare la dimensione dei valori dell'array
+
+
+
+
+    //-------------
+    public static void removeSorted(Comparable[] v, int length, int index){// si utilizzano array riempiti a meta', ricordarsi di decrementare la dimensione dei valori dell'array
         for(int i = index ; i < length-1 ; i++){
             v[i] = v[i+1];
         }
     }
    
-    public static void insert(int[] v, int length, int index, int value){
+    public static void insert(Comparable[] v, int length, int index, Comparable value){
         for(int i = length ; i > index ; i--){
             v[i] = v[i-1];
         }
         v[index] = value;
     }
-    public static int linearSearch(int[] v, int length, int value){
+    public static int linearSearch(Comparable[] v, int length, Comparable value){
         for(int i = 0 ; i < length ; i++){
-            if(v[i]==value) return i;
+            if(v[i].equals(value)) return i;
         }
         return -1;
     }
-    public static int findMax(int[] v, int length){
-        int max = v[0];
+    public static Comparable findMax(Comparable[] v, int length){
+        Comparable max = v[0];
         for(int i = 1; i < length ; i++){
-            if(v[i]>max) max = v[i];
+            if(v[i].compareTo(max)>1) max = v[i];
         }
         return max;
     }
-    public static int findMin(int[] v, int length){
-        int min = v[0];
+    public static Comparable findMin(Comparable[] v, int length){
+        Comparable min = v[0];
         for(int i = 1; i < length ; i++){
-            if(v[i]<min) min = v[i];
+            if(v[i].compareTo(min)<1) min = v[i];
         }
         return min;
     }
-    public static int findMinPos(int[] v, int ini, int fine){// lavoro con array riempiti a metà e con inizio diverso da 0
-        int min = v[ini];
+    public static int findMinPos(Comparable[] v, int ini, int fine){// lavoro con array riempiti a metà e con inizio diverso da 0
+        Comparable min = v[ini];
         int pos = ini;
         for(int i = ini ; i < fine ; i++){
-            if(min>v[i]){
+            if(min.compareTo(v[i])>1){
                 min = v[i];
                 pos = i;
             }
         }
         return pos;
     }
-    public static int findMaxPos(int[] v, int ini, int fine){// lavoro con array riempiti a metà e con inizio diverso da 0
-        int max = v[ini];
+    public static int findMaxPos(Comparable[] v, int ini, int fine){// lavoro con array riempiti a metà e con inizio diverso da 0
+        Comparable max = v[ini];
         int pos = ini;
         for(int i = ini ; i < fine ; i++){
-            if(max<v[i]){
+            if(max.compareTo(v[i])<1){
                 max = v[i];
                 pos = i;
             }
         }
         return pos;
     }
-    public static void swap(int[] v, int posA, int posB){
+    public static void swap(Comparable[] v, int posA, int posB){
         if(posA!=posB){
-            int temp = v[posA];
+            Comparable temp = v[posA];
             v[posA] = v[posB];
             v[posB] = temp;
         }
     }
-    public static void selectionSort(int[] v, int length){
+    public static void selectionSort(Comparable[] v, int length){
         for(int i = 0; i<length; i++){
-            int min = findMinPos(v,i,length);
+            Comparable min = findMinPos(v,i,length);
             swap(v,min,i);
         }
     }
-    public static void selectionSortDecre(int[] v, int length){
+    public static void selectionSortDecre(Comparable[] v, int length){
         for(int i = 0; i<length; i++){
-            int max = findMaxPos(v,i,length);
+            Comparable max = findMaxPos(v,i,length);
             swap(v,max,i);
         }
     }
-    public static int[] merge(int[] a, int[] b){
-        int lA = 0, lB = 0, lC = 0, dim = (a.length+b.length);
-        int[] c = new int[dim];
-        while(a.length > lA && b.length > lB){
-            if(a[lA] < b[lB]){
+    public static Comparable[] merge(Comparable[] a, Comparable[] b){
+        int lA = 0, lB = 0, lC = 0, dim = (a.length()+b.length());
+        Comparable[] c = new Comparable[dim];
+        while(a.length() > lA && b.length() > lB){
+            if(a[lA].compareTo(b[lB]<1)){
                 c[lC] = a[lA];
                 lC++;
                 lA++;
@@ -122,20 +145,20 @@ public class ArrayAlgs{
                 lB++;
             }
         }
-        if(a.length > lA){
+        if(a.length() > lA){
             System.arraycopy(a,lA,c,lC,(dim-lC));
         }else{
-            if(b.length > lB){
+            if(b.length() > lB){
                 System.arraycopy(b,lB,c,lC,(dim-lC));
             }
         }
         return c;
     }
-    public static int[] mergeSort(int[] a, int n){
+    public static Comparable[] mergeSort(Comparable[] a, int n){
         int n1 = n / 2, n2 = n - n1;
         //if(n1 <= 0) n1 = 1;
         //if(n2 <= 0) n2 = 1;
-        int[] a1 = new int[n1], a2 = new int[n2];
+        Comparable[] a1 = new Comparable[n1], a2 = new Comparable[n2];
         System.arraycopy(a,0,a1,0,n1);
         System.arraycopy(a,n1,a2,0,n2);
 
@@ -145,10 +168,10 @@ public class ArrayAlgs{
         //System.out.println(printArray(a,n)); stringa debug post merge
         return a;
     }
-    public static void insertionSort(int[] v, int length){
+    public static void insertionSort(Comparable[] v, int length){
         for(int i=1; i<length; i++){
             for(int j=i; j>0; j--){
-                if(v[j]<=v[j-1]);
+                if(v[j].compareTo(v[j-1])<=1);
                 swap(v,j,j-1);
             }
         }
