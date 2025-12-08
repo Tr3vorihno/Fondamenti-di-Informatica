@@ -1,30 +1,54 @@
 package ArrayAlgs;
 
 
-public class ArrayAlgs ext{
+public class ArrayAlgs {
+    // TODO
+
+    /**
+     * testa tutti i metodi di sort ricerca ecc, implementa ricerca dicotomica binaria
+     * 
+     */
     
-    /*public static void main(String args[]){
-        int n[] = randomIntArray(100000,0,10000);
+    public static void main(String args[])throws Exception{
+        Comparable n[] = {9,98,2,3,7};
         //Comparable[] n = {5,4,3,2,1};
-        System.out.println(printArray(n,100000));
-        n = mergeSort(n,100000);
-        System.out.println(printArray(n,100000));
-        //selectionSort(n,100);
+        //n = mergeSort(n,5);
+        
+        System.out.println(printArray(n,5));
+        //System.out.println(binarySearch(n,0,5,"z"));
+        n = selectionSort(n,5);
+        System.out.println(printArray(n,5));
         
     }
-    */
+    
+    
+    
     // arraycopy(Object src, int srcPos, Object dest, int destPos, int length)
     //------
 
 
 
 
-    //TODO 
-    // CONTROLLA STA FUNZIONE,
+    public static int binarySearch(Comparable[] v, int ini, int fine, Comparable f){
+        int media = (int)(ini+fine)/2;
+        if(fine<=ini){
+            return -1;
+        }else{
+            if(v[media].equals(f)){
+                return media;
+            }else{
+                if(v[media].compareTo(f)>0){
+                    return binarySearch(v,ini,media,f);
+                }else{
+                    return binarySearch(v,media,fine,f);
+                }
+            }
+        }
+    }
     public static Comparable[] resize(Comparable[] oldArray, int newLength)throws Exception{
-        if(newLength < 0 || oldArray == null || newLength < oldArray.length()) throw new Exception();
+        if(newLength < 0 || oldArray == null || newLength < oldArray.length) throw new Exception();
         Comparable[] newArray = new Comparable[newLength];
-        System.arraycopy(oldArray,0,newArray,0,3);
+        System.arraycopy(oldArray,0,newArray,0,oldArray.length);
         return newArray;
     }
 
@@ -46,8 +70,8 @@ public class ArrayAlgs ext{
     //riempimento generico
 
 
-    public static int[] randomIntArray(int length, int min, int max){// numero casuale tra min e max-1 
-        int[] array = new int[length]; 
+    public static Comparable[] randomIntArray(int length, int min, int max){// numero casuale tra min e max-1 
+        Comparable[] array = new Comparable[length]; 
         for(int i=0 ; i<length; i++){
             array[i] = ((int)(Math.random()*(max-min)+min));
         }
@@ -79,22 +103,22 @@ public class ArrayAlgs ext{
     public static Comparable findMax(Comparable[] v, int length){
         Comparable max = v[0];
         for(int i = 1; i < length ; i++){
-            if(v[i].compareTo(max)>1) max = v[i];
+            if(v[i].compareTo(max)>0) max = v[i];
         }
         return max;
     }
     public static Comparable findMin(Comparable[] v, int length){
         Comparable min = v[0];
         for(int i = 1; i < length ; i++){
-            if(v[i].compareTo(min)<1) min = v[i];
+            if(v[i].compareTo(min)<0) min = v[i];
         }
         return min;
     }
     public static int findMinPos(Comparable[] v, int ini, int fine){// lavoro con array riempiti a metà e con inizio diverso da 0
         Comparable min = v[ini];
         int pos = ini;
-        for(int i = ini ; i < fine ; i++){
-            if(min.compareTo(v[i])>1){
+        for(int i = ini+1 ; i < fine ; i++){
+            if(min.compareTo(v[i])>0){
                 min = v[i];
                 pos = i;
             }
@@ -105,7 +129,7 @@ public class ArrayAlgs ext{
         Comparable max = v[ini];
         int pos = ini;
         for(int i = ini ; i < fine ; i++){
-            if(max.compareTo(v[i])<1){
+            if(max.compareTo(v[i])<0){
                 max = v[i];
                 pos = i;
             }
@@ -119,23 +143,25 @@ public class ArrayAlgs ext{
             v[posB] = temp;
         }
     }
-    public static void selectionSort(Comparable[] v, int length){
+    public static Comparable[] selectionSort(Comparable[] v, int length){
         for(int i = 0; i<length; i++){
-            Comparable min = findMinPos(v,i,length);
+            int min = findMinPos(v,i,length);
             swap(v,min,i);
         }
+        return v;
     }
-    public static void selectionSortDecre(Comparable[] v, int length){
+    public static Comparable[] selectionSortDecre(Comparable[] v, int length){
         for(int i = 0; i<length; i++){
-            Comparable max = findMaxPos(v,i,length);
+            int max = findMaxPos(v,i,length);
             swap(v,max,i);
         }
+        return v;
     }
     public static Comparable[] merge(Comparable[] a, Comparable[] b){
-        int lA = 0, lB = 0, lC = 0, dim = (a.length()+b.length());
+        int lA = 0, lB = 0, lC = 0, dim = (a.length+b.length);
         Comparable[] c = new Comparable[dim];
-        while(a.length() > lA && b.length() > lB){
-            if(a[lA].compareTo(b[lB]<1)){
+        while(a.length > lA && b.length > lB){
+            if(a[lA].compareTo(b[lB])<0){
                 c[lC] = a[lA];
                 lC++;
                 lA++;
@@ -145,10 +171,10 @@ public class ArrayAlgs ext{
                 lB++;
             }
         }
-        if(a.length() > lA){
+        if(a.length > lA){
             System.arraycopy(a,lA,c,lC,(dim-lC));
         }else{
-            if(b.length() > lB){
+            if(b.length > lB){
                 System.arraycopy(b,lB,c,lC,(dim-lC));
             }
         }
@@ -168,13 +194,15 @@ public class ArrayAlgs ext{
         //System.out.println(printArray(a,n)); stringa debug post merge
         return a;
     }
-    public static void insertionSort(Comparable[] v, int length){
+    public static Comparable[] insertionSort(Comparable[] v, int length){
         for(int i=1; i<length; i++){
             for(int j=i; j>0; j--){
-                if(v[j].compareTo(v[j-1])<=1);
-                swap(v,j,j-1);
+                if(v[j].compareTo(v[j-1])<=0){
+                    swap(v,j,j-1);
+                }
             }
         }
+        return v;
     }
     public static boolean isPrime(int n){
         if(n==0) return false;
