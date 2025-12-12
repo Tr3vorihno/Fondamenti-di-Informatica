@@ -1,6 +1,4 @@
 package ArrayAlgs;
-
-
 public class ArrayAlgs {
     // TODO
 
@@ -211,4 +209,34 @@ public class ArrayAlgs {
         }
         return true;
     }
+    public static int iterativeBinSearch(Comparable[] v, int dim, Comparable ele){
+        int ini = 0, fin = dim, middle = 0, lastMiddle = 0;
+
+        do{
+            middle = (ini+fin)/2;
+            if(lastMiddle==middle)throw new ElementNotFoundException();
+            if(v[middle].equals(ele)){
+                return middle;
+            }else{
+                if(v[middle].compareTo(ele)>=0){// ele maggiore di middle
+                    fin = middle;
+                }else{// ele minore di middle
+                    ini = middle;
+                }
+            }
+            lastMiddle = middle;
+        }while(ini<=fin);
+        throw new ElementNotFoundException();
+    }
+    public static Comparable[] bubbleSort(Comparable[] v, int dim){
+        for(int i=0; i<dim; i++){
+            for(int j=0; j<dim-1; j++){
+                if(v[j].compareTo(v[j+1])>0) swap(v,j,j+1);
+            }
+        }
+        return v;
+    }
+    
 }
+
+class ElementNotFoundException extends RuntimeException{}
