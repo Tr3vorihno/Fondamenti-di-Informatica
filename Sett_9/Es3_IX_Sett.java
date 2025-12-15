@@ -5,14 +5,14 @@ public class Es3_IX_Sett{
         iterativeMergeSort(n,8);
     }
     public static Comparable[] iterativeMergeSort(Comparable v[], int dim){// PRIMA VERSIONE CON DIM POTENZA DI 2
-        for(int i = 2 ; i<5; i*=2){
+        for(int i = 2 ; i<3; i*=2){
             System.out.println("i: "+i);
             int dimP = (dim/i);
             System.out.println("dimP: "+dimP);
             Comparable n[][] = new Comparable[dimP][i];
-            for(int j = 0, y = 2 ; j < dimP ; j++ , y+=2 ){
-                Comparable[] k1 = {v[y-1]}, k2 = {v[y-2]};// problema sta qui
-                n[j] = merge(k1,k2);
+            for(int j = 0, y = i ; j < dimP ; j++ , y+=i ){
+                Comparable[][] k = toMatrix(v,dimP,y);// problema sta qui
+                n[j] = merge(k[j],k[j+1]);
                 System.out.println(printArray(n[j],i));
             }
             System.out.println(" ");
@@ -21,8 +21,9 @@ public class Es3_IX_Sett{
     }
     public static Comparable[][] toMatrix(Comparable v[], int dimX, int dimY){
         Comparable[][] n = new Comparable[dimX][dimY];
+        //System.out.println("righe: "+dimX+ " colonne"+dimY);
         for(int i=0; i<dimX; i++){
-            for(int j=0; j<dimY; i++){
+            for(int j=0; j<dimY; j++){
                 n[i][j] = v[i];
             }
         }
