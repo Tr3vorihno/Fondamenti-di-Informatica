@@ -17,11 +17,7 @@ public class DynamicStack extends FixedStack {
     }
     public static void main(String[] agrs){
         DynamicStack s = new DynamicStack();
-        s.push("ciao");
-        s.push("sono");
-        s.push("enrico");
-        s.push("cervi");
-        s.push("gay");
+        
         while(!s.isEmpty()){
             String h = (String) s.pop();
             System.out.println(h);
