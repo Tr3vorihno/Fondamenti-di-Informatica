@@ -1,7 +1,7 @@
 package ADT_Classi;
 
 import ADT_Interfacce.Stack;
-import ADT_Exception.*;;
+import ADT_Exception.*;
 
 public class FixedStack implements Stack{
     private Object[] v;
