@@ -192,6 +192,8 @@ public class ArrayAlgs {
         //System.out.println(printArray(a,n)); stringa debug post merge
         return a;
     }
+
+
     public static Comparable[] insertionSort(Comparable[] v, int length){
         for(int i=1; i<length; i++){
             for(int j=i; j>0; j--){
@@ -209,6 +211,7 @@ public class ArrayAlgs {
         }
         return true;
     }
+
     public static int iterativeBinSearch(Comparable[] v, int dim, Comparable ele){
         int ini = 0, fin = dim, middle = 0, lastMiddle = 0;
 
