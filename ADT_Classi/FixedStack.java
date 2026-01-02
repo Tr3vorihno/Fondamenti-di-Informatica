@@ -7,14 +7,6 @@ public class FixedStack implements Stack{
     private Object[] v;
     private int vSize; 
     private static int vMax = 100;
-
-    public static void main(String[] agrs){
-        FixedStack s = new FixedStack();
-        s.push("ciao");
-        String h = (String) s.pop();
-        System.out.println(h);
-        
-    }
     public FixedStack(){
         v = new Object[vMax];
         this.makeEmpty();
@@ -38,7 +30,7 @@ public class FixedStack implements Stack{
     }
     public Object top(){
         if(this.isEmpty()) throw new EmptyStackException();
-        return this.v[this.vSize];
+        return this.v[vSize-1];
     }
     public int getVSize(){
         return this.vSize;
