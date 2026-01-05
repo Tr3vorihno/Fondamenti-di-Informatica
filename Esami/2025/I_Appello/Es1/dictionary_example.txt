@@ -1,0 +1,21 @@
+1,BMW_RT 1250
+18,Honda_CBR600
+21,Yamaha_R1
+49,Triumph_Daytona
+39,CFMoto_700 CLX
+5,MotoGuzzi_V85
+3,Harley_Electra Glide
+27,Harley_Sportster
+44,Suzuki_Hayabusa
+26,KTM_RC390
+42,MotoGuzzi_V85
+45,Aprilia_RSV4
+43,Ducati_Panigale
+25,MotoGuzzi_V85
+37,Benelli_TNT300
+15,Husqvarna_Vitpilen
+22,Harley_Sportster
+20,Vespa_GTS300
+28,RoyalEnfield_Interceptor
+36,Vespa_GTS300
+50,MV_Agusta_F4
